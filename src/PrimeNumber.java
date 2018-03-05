@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /**
  * <h1>Prime Number</h1>
  * <p>
@@ -58,8 +61,30 @@ class PrimeNumber
     }
     return firstNPrimes;
   }
-  int[] returnBetweenrimes(int rangeStart, int rangeEnd)
+
+  /**
+   *
+   * @param rangeStart Starting number range (included)
+   * @param rangeEnd Ending number range (included)
+   * @return Returns the total prime numbers in between the given range of numbers
+   */
+  int[] rangedPrimes(int rangeStart, int rangeEnd)
   {
-    return null;
+    int[] primeNumbers;
+    ArrayList<Integer> primeNumbersList = new ArrayList();
+
+    // Returns NULL if either is negative OR if rangeEnd is less than rangeStart
+    if(rangeEnd < 0 || rangeStart < 0 || rangeEnd < rangeStart)
+      return null;
+
+    for(int i = rangeStart; i <= rangeEnd; i++)
+      if(checkPrime(i))
+        primeNumbersList.add(i);
+
+    // Initialize the Array
+    primeNumbers = new int[primeNumbersList.size()];
+    for (int i = 0; i < primeNumbersList.size(); i++)
+      primeNumbers[i] = primeNumbersList.get(i);
+    return primeNumbers;
   }
 }
