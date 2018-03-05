@@ -1,10 +1,9 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
  * <h1>Prime Number</h1>
  * <p>
- * The Prime number class has functions that can return the first N prime numberes,
+ * The Prime number class has functions that can return the first N prime numbers,
  * prime numbers between range 'a' and 'b', check if a number is prime or not.
  * </p>
  *
@@ -71,7 +70,7 @@ class PrimeNumber
   int[] rangedPrimes(int rangeStart, int rangeEnd)
   {
     int[] primeNumbers;
-    ArrayList<Integer> primeNumbersList = new ArrayList();
+    ArrayList<Integer> primeNumbersList = new ArrayList<Integer>();
 
     // Returns NULL if either is negative OR if rangeEnd is less than rangeStart
     if(rangeEnd < 0 || rangeStart < 0 || rangeEnd < rangeStart)
